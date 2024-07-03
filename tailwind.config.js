@@ -15,5 +15,9 @@ export default {
   },
   variants: {},
   plugins: [],
+  safelist: [
+    'bg-hero-mobile',
+    'bg-hero-desktop',
+  ],
 }
 

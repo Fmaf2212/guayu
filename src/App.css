@@ -1,15 +1,15 @@
 @font-face {
   font-family: 'GratelosDisplay';
-  src: url('./assets/fonts/GratelosDisplay.ttf');
+  src: url('./assets/fonts/gratelosdisplay.woff2');
 }
 @font-face {
   font-family: 'Skia_normal';
-  src: url('./assets/fonts/Skia_normal.ttf');
+  src: url('./assets/fonts/skia_normal.woff2');
 }
 
 @font-face {
   font-family: 'Skia';
-  src: url('./assets/fonts/Skia.ttf');
+  src: url('./assets/fonts/skia_normal.woff2');
 }
 
 #root {
@@ -19,6 +19,16 @@
   text-align: center;
 }
 
+.backgroundTopMain {
+  background-image: url('/src/assets/images/bgTopMain1x.webp');
+}
+
+@media (width > 768px){
+  .backgroundTopMain {
+    background-image: url('/src/assets/images/bgTopMain3xSinLogo.webp');
+  }
+}
+/*-------------------------------*/
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -65,5 +75,27 @@
   }
   50% {
       transform: scale(1.1);
+  }
+}
+/*-------------------------------*/
+.hover-target {
+  transform: translateX(50%);
+  transition: transform 0.5s ease;
+}
+.hover-content {
+  opacity: 0;
+  transform: translateX(0%);
+  transition: opacity 0.5s ease, transform 0.3s ease;
+}
+
+@media (min-width: 992px) {
+
+  .hover-target:hover .hover-content {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  .hover-target:hover {
+    transform: translateX(0%);
   }
 }
